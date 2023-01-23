@@ -9,25 +9,85 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Frontend Mentor | Order summary card</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
-          colors: {
-            blue: 'hsl(245, 75%, 52%)',
-            paleBlue: 'hsl(225, 100%, 94%)',
-            paleBlue2: 'hsl(225, 100%, 98%)',
-            desaturatedBlue: 'hsl(224, 23%, 55%)',
-            darkBlue: 'hsl(223, 47%, 23%)',
+          extend: {
+            colors: {
+              paleBlue: 'hsl(225, 100%, 94%)',
+              blue: 'hsl(245, 75%, 52%)',
+              paleBlue2: 'hsl(225, 100%, 98%)',
+              desaturatedBlue: 'hsl(224, 23%, 55%)',
+              darkBlue: 'hsl(223, 47%, 23%)',
+              blueAlpha: 'hsla(245deg, 75%, 52%, 0.622)',
+            },
+            height: {
+              card: '45rem',
+            },
+            width: {
+              card: '30rem',
+            },
+          },
+          fontFamily: {
+            custom: ['Red Hat Display'],
           },
         },
       };
     </script>
   </head>
   <body
-    class="bg-[url('./images/pattern-background-desktop.svg')] bg-paleBlue bg-contain bg-no-repeat h-screen flex flex-col justify-center items-center"
+    class="bg-[url('./images/pattern-background-desktop.svg')] bg-paleBlue bg-contain bg-no-repeat h-screen flex flex-col justify-center items-center font-custom"
   >
+    <!-- card -->
+    <main
+      class="h-card w-card bg-[url('./images/illustration-hero.svg')] bg-contain bg-no-repeat bg-white rounded-[20px] flex flex-col justify-end gap-10 px-12 pb-6"
+    >
+      <!-- header -->
+      <section class="flex flex-col items-center gap-4">
+        <h1 class="text-3xl font-black">Order Summary</h1>
+        <p class="text-desaturatedBlue text-center text-lg">
+          You can now listen to milions of songs, audiobooks, and podcasts on
+          any device anywhere you like!
+        </p>
+      </section>
+      <!-- plan -->
+      <section
+        class="flex gap-5 bg-paleBlue2 h-24 items-center px-6 rounded-lg"
+      >
+        <img src="./images/icon-music.svg" alt="" />
+        <div>
+          <h3 class="font-black text-darkBlue">Annual Plan</h3>
+          <span class="text-desaturatedBlue">$59.99/year</span>
+        </div>
+        <button
+          class="ml-auto text-blue font-bold underline hover:text-blueAlpha hover:no-underline duration-200"
+        >
+          Change
+        </button>
+      </section>
+      <!-- buttons -->
+      <section class="flex flex-col gap-4">
+        <button
+          class="h-14 bg-blue text-white rounded-xl hover:bg-blueAlpha transition-all duration-200"
+        >
+          Proceed to Payment
+        </button>
+        <button
+          class="h-6 text-desaturatedBlue font-black hover:text-darkBlue duration-200"
+        >
+          Cancel Order
+        </button>
+      </section>
+    </main>
+
     <!-- footer -->
     <div class="attribution absolute bottom-2">
       Challenge by
